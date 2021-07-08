@@ -1,0 +1,10 @@
+.counter{
+    margin: 0 10%;
+    height: 125px;
+    background-color: pink;
+}
+.controls{
+    margin: 0 10%;
+    height: 125px;
+    background-color: greenyellow;
+}

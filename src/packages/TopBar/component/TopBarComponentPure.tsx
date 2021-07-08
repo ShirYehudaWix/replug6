@@ -1,3 +1,4 @@
+import '../topBarStyle.css';
 
 
 export const TopBarComponentPure = () => (
