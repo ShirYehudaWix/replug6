@@ -7,11 +7,6 @@ import React from "react";
 import {componentsSlotKey} from "../../mainView/mainViewAPI";
 import {Controls} from "../../Counter/components/Controls/ControlsPureComponent";
 
-import {createTopBarAIP, TopBarAPI} from "../Api/TopBarAPI";
-import {createConnectedTopBar} from "../component/TopBarConnected";
-import React from "react";
-import {componentsSlotKey} from "../../mainView/mainViewAPI";
-
 
 export const TopBarUIEntryPoint:EntryPoint={
     name:"Top Bar",
