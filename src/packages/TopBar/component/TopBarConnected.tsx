@@ -12,13 +12,11 @@ import {componentsSlotKey} from "../../mainView/mainViewAPI";
 //
 export interface TopBarStateProps{
     slot:ExtensionSlot<any>
-    print:()=>void
 }
 const mapStateToProps = (shell: Shell): TopBarStateProps => {
 const topBarApi=shell.getAPI(TopBarAPI)
 
     return {
-    print:topBarApi.print,
         slot:topBarApi.getSlot()
     };
 };

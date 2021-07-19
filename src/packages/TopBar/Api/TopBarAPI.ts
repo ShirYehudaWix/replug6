@@ -22,25 +22,20 @@ export interface ContributedComponent {
 }
 
 export interface TopBarAPI {
-    component: (fromShell: Shell, contribution: ContributedComponent) => void,
+    contributeComponent: (fromShell: Shell, contribution: ContributedComponent) => void,
     getSlot: () => ExtensionSlot<TopBarComponentContribution>,
-    print: () => void
 }
 
 export const createTopBarAIP = (shell: Shell): TopBarAPI => {
     const contributeSlot=shell.declareSlot(TopBarComponentContributionSlotKey)
-    const contributeComponent: TopBarAPI["component"] = (fromShell, contribution) => {
+    const contributeComponent: TopBarAPI["contributeComponent"] = (fromShell, contribution) => {
         contributeSlot.contribute(fromShell, contribution)
     }
     const giveSlot = () => {
         return shell.getSlot(TopBarComponentContributionSlotKey)
     }
-    const print = () => {
-        console.log("hello")
-    }
     return {
-        component: contributeComponent,
+        contributeComponent: contributeComponent,
         getSlot: giveSlot,
-        print
     }
 }

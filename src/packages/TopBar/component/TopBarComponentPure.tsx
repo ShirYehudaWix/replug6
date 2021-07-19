@@ -10,7 +10,6 @@ export const TopBarComponentPure = (props:TopBarStateProps) => (
         <div>
             this is my top bar
         </div>
-        {props.print()}
-        {/*<SlotRenderer slot={props.slot} mapFunc={slotItemToComp}/>*/}
+        <SlotRenderer slot={props.slot} mapFunc={slotItemToComp}/>
     </div>
 )
