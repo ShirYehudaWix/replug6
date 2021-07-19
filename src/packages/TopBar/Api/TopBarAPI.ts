@@ -38,6 +38,5 @@ export const createTopBarAIP = (shell: Shell): TopBarAPI => {
         contributeComponent: contributeComponent,
         getSlot: giveSlot,
 
-
     }
 }
