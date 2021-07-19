@@ -6,6 +6,7 @@ export const CounterPureComponent=(props:CounterStateProps)=>{
         <div>
             this is my counter
             {props.counterValue}
+
         </div>
     </div>
 }

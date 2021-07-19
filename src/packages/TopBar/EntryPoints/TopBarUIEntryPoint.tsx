@@ -7,6 +7,7 @@ import React from "react";
 import {componentsSlotKey} from "../../mainView/mainViewAPI";
 import {Controls} from "../../Counter/components/Controls/ControlsPureComponent";
 
+
 export const TopBarUIEntryPoint:EntryPoint={
     name:"Top Bar",
     getDependencyAPIs(): SlotKey<any>[] {
