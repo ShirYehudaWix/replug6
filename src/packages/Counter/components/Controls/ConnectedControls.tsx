@@ -1,5 +1,6 @@
 import {connectWithShell, Shell} from "repluggable";
 import {Controls} from "./ControlsPureComponent";
+
 import {ControlsAPI} from "../../APIs/controlsAPI";
 
 const mapDispatchToProps = (shell: Shell): ControlsDispatchProps => {
@@ -17,4 +18,5 @@ export interface ControlsDispatchProps {
 
 export const createConnectedControls = (boundShell: Shell) => {
     return connectWithShell<{}, {}, {}, ControlsDispatchProps>(undefined, mapDispatchToProps, boundShell)(Controls)
+
 }
