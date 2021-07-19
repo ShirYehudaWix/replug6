@@ -1,21 +1,43 @@
-import {ReactComponentContributor, Shell, SlotKey} from "repluggable";
+import {ExtensionSlot, ReactComponentContributor, Shell, SlotKey, SlotRenderer} from "repluggable";
+import React from "react";
+import {componentsSlotKey} from "../../mainView/mainViewAPI";
 
-export const TopBarAPISlotKey:SlotKey<ContributedComponent>={
-    name:"Top Bar API",
-    public:true
+export const TopBarAPI: SlotKey<TopBarAPI> = {
+    name: "Top Bar API",
+    public: true
 }
+
+export interface TopBarComponentContribution {
+
+}
+
+export const TopBarComponentContributionSlotKey: SlotKey<TopBarComponentContribution> = {
+    name: "Top Bar Component Contribution SlotKey",
+
+}
+
 export interface ContributedComponent {
     component: ReactComponentContributor;
-}
-export interface TopBarAPI {
-component:(fromShell:Shell, contribution: ContributedComponent)=>void
+
 }
 
-export const createTopBarAIP=(shell: Shell):TopBarAPI =>{
-    const contributeComponent:TopBarAPI["component"]=(fromShell, contribution)=>{
-        shell.declareSlot(TopBarAPISlotKey).contribute(fromShell, contribution)
+export interface TopBarAPI {
+    contributeComponent: (fromShell: Shell, contribution: ContributedComponent) => void,
+    getSlot: () => ExtensionSlot<TopBarComponentContribution>,
+}
+
+export const createTopBarAIP = (shell: Shell): TopBarAPI => {
+    const contributeSlot=shell.declareSlot(TopBarComponentContributionSlotKey)
+    const contributeComponent: TopBarAPI["contributeComponent"] = (fromShell, contribution) => {
+        contributeSlot.contribute(fromShell, contribution)
     }
-    return{
-    component: contributeComponent
+    const giveSlot = () => {
+        return shell.getSlot(TopBarComponentContributionSlotKey)
+    }
+    return {
+        contributeComponent: contributeComponent,
+        getSlot: giveSlot,
+
+
     }
 }
