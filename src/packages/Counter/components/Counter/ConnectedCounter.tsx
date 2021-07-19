@@ -21,6 +21,6 @@ import {CounterPureComponent} from "./CounterPureComponent";
 // };
 
 
-export const createConnectedTopBar=(boundShell:Shell)=>{
+export const createConnectedCounter=(boundShell:Shell)=>{
     return connectWithShell<{},{},{},{}>(undefined,undefined,boundShell)(CounterPureComponent)
 }
