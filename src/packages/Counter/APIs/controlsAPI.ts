@@ -2,6 +2,7 @@ import {ExtensionSlot, ReactComponentContributor, Shell, SlotKey, SlotRenderer} 
 import React from "react";
 import {componentsSlotKey} from "../../mainView/mainViewAPI";
 import {CounterScopedState, createCounterSelectors} from "../../../store/counterSelector";
+import {DECREASE, INCREASE} from "../../../store/actionTypes";
 
 export const ControlsAPI: SlotKey<ControlsAPI> = {
     name: "Controls API",
@@ -24,9 +25,9 @@ export interface ControlsAPI {
 export const createControlsAPI = (shell: Shell): ControlsAPI => {
 
     return {
-        increase:()=>{console.log("increase")},
+        increase:()=>{shell.getStore().dispatch({type: INCREASE})},
         decrease:()=>{
-            console.log("decrease")
-        }
+            shell.getStore().dispatch({type: DECREASE})}
+
     }
 }
