@@ -9,10 +9,14 @@ import {Controls} from "../../Counter/components/Controls/ControlsPureComponent"
 import {createConnectedControls} from "../../Counter/components/Controls/ConnectedControls";
 import {ControlsAPI} from "../../Counter/APIs/controlsAPI";
 
+
 export const TopBarUIEntryPoint:EntryPoint={
     name:"Top Bar",
     getDependencyAPIs(): SlotKey<any>[] {
         return [MainViewAPI,ControlsAPI]
+    },
+    declareAPIs() {
+        return [TopBarAPI]
     },
     declareAPIs() {
         return [TopBarAPI]
@@ -24,6 +28,7 @@ export const TopBarUIEntryPoint:EntryPoint={
     extend(shell: Shell) {
         const TopBar=createConnectedTopBar(shell)
         const Controls=createConnectedControls(shell)
+
         shell.getAPI(MainViewAPI).contributeComponent(shell,{component:()=><TopBar />})
         shell.getAPI(TopBarAPI).contributeComponent(shell,{component:()=><Controls/>})
     }

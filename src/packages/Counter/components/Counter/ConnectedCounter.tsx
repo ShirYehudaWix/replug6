@@ -24,4 +24,5 @@ const mapStateToProps = (shell: Shell): CounterStateProps => {
 
 export const createConnectedCounter=(boundShell:Shell)=>{
     return connectWithShell<{},{},CounterStateProps,{}>(mapStateToProps,undefined,boundShell)(CounterPureComponent)
+
 }
