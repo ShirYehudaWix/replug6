@@ -3,6 +3,7 @@ import React from "react";
 import {componentsSlotKey} from "../../mainView/mainViewAPI";
 import {CounterScopedState, createCounterSelectors} from "../../../store/counterSelector";
 
+
 export const CounterAPI: SlotKey<CounterAPI> = {
     name: "Counter API",
     public: true
@@ -27,6 +28,7 @@ export const createCounterAIP = (shell: Shell): CounterAPI => {
     const getCounterValue = () => {
         return selector.counterValue()
     }
+
     return {
         getCounterValue
     }

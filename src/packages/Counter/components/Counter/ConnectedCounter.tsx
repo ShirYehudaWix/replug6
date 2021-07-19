@@ -3,6 +3,7 @@ import {connectWithShell, ExtensionSlot, ReactComponentContributor, Shell} from 
 import {CounterPureComponent} from "./CounterPureComponent";
 import {CounterAPI} from "../../APIs/counterAPI";
 
+
 // const mapDispatchToProps = (shell: Shell): ZoomBarDispatchProps => {
 //
 //     return {
@@ -24,4 +25,5 @@ const mapStateToProps = (shell: Shell): CounterStateProps => {
 
 export const createConnectedCounter=(boundShell:Shell)=>{
     return connectWithShell<{},{},CounterStateProps,{}>(mapStateToProps,undefined,boundShell)(CounterPureComponent)
+
 }

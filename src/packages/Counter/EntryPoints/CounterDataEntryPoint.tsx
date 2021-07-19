@@ -1,6 +1,7 @@
 import {EntryPoint, Shell, SlotKey} from "repluggable";
 import React from "react";
 import {CounterAPI, createCounterAIP} from "../APIs/counterAPI";
+
 import {counterReducer} from "../../../store/counterReducer";
 
 export const CounterDataEntryPoint: EntryPoint = {
@@ -12,6 +13,7 @@ export const CounterDataEntryPoint: EntryPoint = {
         shell.contributeAPI(CounterAPI, () => createCounterAIP(shell))
         shell.contributeState(() => ({counter: counterReducer}))
     },
+
     extend(shell: Shell) {
 
     }
