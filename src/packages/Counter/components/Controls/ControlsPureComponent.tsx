@@ -5,8 +5,9 @@ interface ControlsProps{
     decrease:()=>void
 }
 export const Controls = () => {
-const increase:()=>void=()=>{
-
+const increase:()=>void=()=>{console.log("increase")}
+const decrease:()=>void=()=>{
+    console.log("decrease")
     }
  return   (
 
@@ -16,7 +17,7 @@ const increase:()=>void=()=>{
             </div>
 
             <button onClick={increase} >+</button>
-            <button  >-</button>
+            <button  onClick={decrease} >-</button>
 
         </div>
     );
