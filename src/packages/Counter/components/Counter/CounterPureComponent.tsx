@@ -1,10 +1,11 @@
 import style from "../../counterSytle.module.css"
+import {CounterStateProps} from "./ConnectedCounter";
 
-export const CounterPureComponent=()=>{
+export const CounterPureComponent=(props:CounterStateProps)=>{
    return  <div className={style.counter}>
         <div>
             this is my counter
-            5
+            {props.counterValue}
         </div>
     </div>
 }

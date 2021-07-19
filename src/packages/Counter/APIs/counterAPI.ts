@@ -19,7 +19,7 @@ export interface CounterAPI {
 }
 
 const getCounterValue = () => {
-    return 5;
+    return 58;
 }
 
 export const createCounterAIP = (shell: Shell): CounterAPI => {

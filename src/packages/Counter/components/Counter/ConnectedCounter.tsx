@@ -1,6 +1,7 @@
 import {connectWithShell, ExtensionSlot, ReactComponentContributor, Shell} from "repluggable";
 
 import {CounterPureComponent} from "./CounterPureComponent";
+import {CounterAPI} from "../../APIs/counterAPI";
 
 // const mapDispatchToProps = (shell: Shell): ZoomBarDispatchProps => {
 //
@@ -9,18 +10,18 @@ import {CounterPureComponent} from "./CounterPureComponent";
 //     };
 // };
 //
-// export interface TopBarStateProps{
-//     slot:ExtensionSlot<any>
-// }
-// const mapStateToProps = (shell: Shell): TopBarStateProps => {
-//     const topBarApi=shell.getAPI(TopBarAPI)
-//
-//     return {
-//         slot:topBarApi.getSlot()
-//     };
-// };
+export interface CounterStateProps{
+    counterValue:number
+}
+const mapStateToProps = (shell: Shell): CounterStateProps => {
+    const counterApi=shell.getAPI(CounterAPI)
+
+    return {
+        counterValue:counterApi.getCounterValue()
+    };
+};
 
 
 export const createConnectedCounter=(boundShell:Shell)=>{
-    return connectWithShell<{},{},{},{}>(undefined,undefined,boundShell)(CounterPureComponent)
+    return connectWithShell<{},{},CounterStateProps,{}>(mapStateToProps,undefined,boundShell)(CounterPureComponent)
 }
