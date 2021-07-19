@@ -23,7 +23,6 @@ export interface TopBarAPI {
 
 export const createTopBarAIP = (shell: Shell): TopBarAPI => {
     const contributeSlot = shell.declareSlot(TopBarComponentContributionSlotKey)
-
     const contributeComponent: TopBarAPI["contributeComponent"] = (fromShell, contribution) => {
         contributeSlot.contribute(fromShell, contribution)
     }

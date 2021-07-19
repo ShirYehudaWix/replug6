@@ -3,6 +3,7 @@ import {EntryPoint} from "repluggable";
 import {CounterDataEntryPoint} from "./EntryPoints/CounterDataEntryPoint";
 
 export const CounterPackage: EntryPoint[] = [
+
     CounterUIEntryPoint,
     CounterDataEntryPoint
 ]

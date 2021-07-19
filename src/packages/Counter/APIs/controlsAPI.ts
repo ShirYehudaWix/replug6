@@ -1,4 +1,5 @@
 import { Shell, SlotKey} from "repluggable";
+
 import {DECREASE, INCREASE} from "../../../store/actionTypes";
 
 export const ControlsAPI: SlotKey<ControlsAPI> = {
@@ -20,6 +21,7 @@ export const createControlsAPI = (shell: Shell): ControlsAPI => {
         decrease: () => {
             shell.getStore().dispatch({type: DECREASE})
         }
+
 
     }
 }
