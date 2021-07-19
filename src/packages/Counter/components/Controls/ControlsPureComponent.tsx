@@ -8,6 +8,7 @@ export const Controls = () => {
 const increase:()=>void=()=>{console.log("increase")}
 const decrease:()=>void=()=>{
     console.log("decrease")
+
     }
  return   (
 
@@ -18,6 +19,7 @@ const decrease:()=>void=()=>{
 
             <button onClick={increase} >+</button>
             <button  onClick={decrease} >-</button>
+
 
         </div>
     );

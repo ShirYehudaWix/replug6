@@ -22,7 +22,6 @@ export const TopBarUIEntryPoint:EntryPoint={
     },
     extend(shell: Shell) {
         const TopBar=createConnectedTopBar(shell)
-        const Controls=createConnectedControls(shell)
         shell.getAPI(MainViewAPI).contributeComponent(shell,{component:()=><TopBar />})
         shell.getAPI(TopBarAPI).contributeComponent(shell,{component:()=><Controls/>})
     }
