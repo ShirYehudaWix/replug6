@@ -14,12 +14,17 @@ export interface CounterContributedComponent {
 }
 
 export interface CounterAPI {
+    getCounterValue: () => number
 
+}
+
+const getCounterValue = () => {
+    return 5;
 }
 
 export const createCounterAIP = (shell: Shell): CounterAPI => {
 
     return {
-
+        getCounterValue
     }
 }
