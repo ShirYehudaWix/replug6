@@ -1,27 +1,19 @@
-import {connectWithShell, ExtensionSlot, ReactComponentContributor, Shell} from "repluggable";
+import {connectWithShell, ExtensionSlot, Shell} from "repluggable";
 import {TopBarComponentPure} from "./TopBarComponentPure";
-import {ContributedComponent, TopBarAPI, createTopBarAIP, TopBarComponentContribution} from "../Api/TopBarAPI";
-import {componentsSlotKey} from "../../mainView/mainViewAPI";
+import {TopBarAPI} from "../Api/TopBarAPI";
 
-// const mapDispatchToProps = (shell: Shell): ZoomBarDispatchProps => {
-//
-//     return {
-//
-//     };
-// };
-//
-export interface TopBarStateProps{
-    slot:ExtensionSlot<any>
+export interface TopBarStateProps {
+    slot: ExtensionSlot<any>
 }
+
 const mapStateToProps = (shell: Shell): TopBarStateProps => {
-const topBarApi=shell.getAPI(TopBarAPI)
+    const topBarApi = shell.getAPI(TopBarAPI)
 
     return {
-        slot:topBarApi.getSlot()
+        slot: topBarApi.getSlot()
     };
 };
 
-
-export const createConnectedTopBar=(boundShell:Shell)=>{
-    return connectWithShell<{},{},TopBarStateProps,{}>(mapStateToProps,undefined,boundShell)(TopBarComponentPure)
+export const createConnectedTopBar = (boundShell: Shell) => {
+    return connectWithShell<{}, {}, TopBarStateProps, {}>(mapStateToProps, undefined, boundShell)(TopBarComponentPure)
 }

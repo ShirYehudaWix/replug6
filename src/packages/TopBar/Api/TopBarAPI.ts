@@ -1,6 +1,4 @@
 import {ExtensionSlot, ReactComponentContributor, Shell, SlotKey, SlotRenderer} from "repluggable";
-import React from "react";
-import {componentsSlotKey} from "../../mainView/mainViewAPI";
 
 export const TopBarAPI: SlotKey<TopBarAPI> = {
     name: "Top Bar API",
@@ -8,17 +6,14 @@ export const TopBarAPI: SlotKey<TopBarAPI> = {
 }
 
 export interface TopBarComponentContribution {
-
 }
 
 export const TopBarComponentContributionSlotKey: SlotKey<TopBarComponentContribution> = {
     name: "Top Bar Component Contribution SlotKey",
-
 }
 
 export interface ContributedComponent {
     component: ReactComponentContributor;
-
 }
 
 export interface TopBarAPI {
@@ -27,7 +22,7 @@ export interface TopBarAPI {
 }
 
 export const createTopBarAIP = (shell: Shell): TopBarAPI => {
-    const contributeSlot=shell.declareSlot(TopBarComponentContributionSlotKey)
+    const contributeSlot = shell.declareSlot(TopBarComponentContributionSlotKey)
     const contributeComponent: TopBarAPI["contributeComponent"] = (fromShell, contribution) => {
         contributeSlot.contribute(fromShell, contribution)
     }
