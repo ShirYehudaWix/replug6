@@ -1,5 +1,4 @@
 import {ReactComponentContributor, Shell, SlotKey,} from "repluggable";
-
 import {CounterScopedState, createCounterSelectors} from "../../../store/counterSelector";
 
 export const CounterAPI: SlotKey<CounterAPI> = {
@@ -9,13 +8,11 @@ export const CounterAPI: SlotKey<CounterAPI> = {
 
 export interface CounterContributedComponent {
     component: ReactComponentContributor;
-
 }
 
 export interface CounterAPI {
     getCounterValue: () => number
 }
-
 
 export const createCounterAIP = (shell: Shell): CounterAPI => {
     const store = shell.getStore<CounterScopedState>()
