@@ -5,12 +5,12 @@ export const DECREASE="DECREASE"
 
 
 
-export interface ZoomBarActions {
+export interface ControlsActions {
     increaseCount: () => AnyAction;
     decreaseCount: () => AnyAction;
 }
 
-export const ZoomBarActions: ZoomBarActions = {
+export const ZoomBarActions: ControlsActions = {
     increaseCount: (): AnyAction => ({
         type: INCREASE,
     }),
