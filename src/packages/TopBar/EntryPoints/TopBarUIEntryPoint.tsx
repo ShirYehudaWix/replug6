@@ -6,6 +6,7 @@ import {createConnectedTopBar} from "../component/TopBarConnected";
 import React from "react";
 import {componentsSlotKey} from "../../mainView/mainViewAPI";
 import {Controls} from "../../Counter/components/Controls/ControlsPureComponent";
+import {createConnectedControls} from "../../Counter/components/Controls/ConnectedControls";
 
 export const TopBarUIEntryPoint:EntryPoint={
     name:"Top Bar",
@@ -21,7 +22,7 @@ export const TopBarUIEntryPoint:EntryPoint={
     },
     extend(shell: Shell) {
         const TopBar=createConnectedTopBar(shell)
-
+        const Controls=createConnectedControls(shell)
         shell.getAPI(MainViewAPI).contributeComponent(shell,{component:()=><TopBar />})
         shell.getAPI(TopBarAPI).contributeComponent(shell,{component:()=><Controls/>})
     }
