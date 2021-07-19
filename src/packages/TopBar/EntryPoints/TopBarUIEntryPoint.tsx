@@ -1,7 +1,10 @@
 import {EntryPoint, Shell, SlotKey} from "repluggable";
 import {MainViewAPI} from "../../mainView";
 import {TopBarComponentPure} from "../component/TopBarComponentPure";
-import {createTopBarAIP, TopBarAPI, TopBarAPISlotKey} from "../Api/TopBarAPI";
+import {createTopBarAIP, TopBarAPI} from "../Api/TopBarAPI";
+import {createConnectedTopBar} from "../component/TopBarConnected";
+import React from "react";
+import {componentsSlotKey} from "../../mainView/mainViewAPI";
 
 export const TopBarUIEntryPoint:EntryPoint={
     name:"Top Bar",
@@ -9,13 +12,14 @@ export const TopBarUIEntryPoint:EntryPoint={
         return [MainViewAPI]
     },
     declareAPIs() {
-        return [TopBarAPISlotKey]
+        return [TopBarAPI]
     },
     attach(shell: Shell) {
-        shell.contributeAPI(TopBarAPISlotKey,()=>createTopBarAIP(shell))
+        shell.contributeAPI(TopBarAPI,()=>createTopBarAIP(shell))
 
     },
     extend(shell: Shell) {
-        shell.getAPI(MainViewAPI).contributeComponent(shell,{component:()=><TopBarComponentPure/>})
+        const TopBar=createConnectedTopBar(shell)
+        shell.getAPI(MainViewAPI).contributeComponent(shell,{component:()=><TopBar />})
     }
 }
