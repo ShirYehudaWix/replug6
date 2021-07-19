@@ -3,6 +3,7 @@ import {TopBarStateProps} from "./TopBarConnected";
 import {ExtensionSlot, SlotRenderer} from "repluggable";
 import {ContributedComponent} from "../Api/TopBarAPI";
 
+
 const slotItemToComp = ({component}: ContributedComponent) => component
 
 export const TopBarComponentPure = (props:TopBarStateProps) => (
