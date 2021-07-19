@@ -9,9 +9,9 @@ export const CounterDataEntryPoint: EntryPoint = {
         return [CounterAPI]
     },
     attach(shell: Shell) {
-    shell.contributeAPI(CounterAPI,()=>createCounterAIP(shell))
-        shell.contributeState(()=>counterReducer)
-        },
+        shell.contributeAPI(CounterAPI, () => createCounterAIP(shell))
+        shell.contributeState(() => ({counter: counterReducer}))
+    },
     extend(shell: Shell) {
 
     }
