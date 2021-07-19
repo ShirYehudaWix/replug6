@@ -1,14 +1,9 @@
 import React, {FunctionComponent, useState} from 'react';
-import style from "../../counterSytle.module.css"//counterSytle.module.css"
-interface ControlsProps{
-    increase:()=>void,
-    decrease:()=>void
-}
-export const Controls = () => {
-const increase:()=>void=()=>{console.log("increase")}
-const decrease:()=>void=()=>{
-    console.log("decrease")
-    }
+import style from "../../counterSytle.module.css"
+import {ControlsDispatchProps} from "./ConnectedControls";
+
+export const Controls = (props:ControlsDispatchProps) => {
+
  return   (
 
         <div className={style.controls}>
@@ -16,8 +11,8 @@ const decrease:()=>void=()=>{
                 this is my controls
             </div>
 
-            <button onClick={increase} >+</button>
-            <button  onClick={decrease} >-</button>
+            <button onClick={props.increase} >+</button>
+            <button  onClick={props.decrease} >-</button>
 
         </div>
     );
