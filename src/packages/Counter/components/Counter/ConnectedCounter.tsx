@@ -5,9 +5,8 @@ import {CounterAPI} from "../../APIs/counterAPI";
 export interface CounterStateProps {
     counterValue: number
 }
-
 const mapStateToProps = (shell: Shell): CounterStateProps => {
-    const counterApi = shell.getAPI(CounterAPI)
+    const counterApi = shell.getAPI(CounterAPI) // Nir- API instead of Api
 
     return {
         counterValue: counterApi.getCounterValue()

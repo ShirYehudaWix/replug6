@@ -6,4 +6,4 @@ export const CounterPackage: EntryPoint[] = [
     CounterUIEntryPoint,
 
     CounterDataEntryPoint
-]
+] //Nir: use 'hot' function to combine EntryPoints into package

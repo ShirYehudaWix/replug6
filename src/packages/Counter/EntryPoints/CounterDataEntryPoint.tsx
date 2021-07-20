@@ -5,7 +5,7 @@ import {counterReducer} from "../../../store/counterReducer";
 import {ControlsAPI, createControlsAPI} from "../APIs/controlsAPI";
 
 export const CounterDataEntryPoint: EntryPoint = {
-    name: "Counter Data",
+    name: "Counter Data", //Nir: maybe add 'Entry Point' in the end
 
     declareAPIs(): SlotKey<any>[] {
         return [CounterAPI, ControlsAPI]

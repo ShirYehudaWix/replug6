@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "../../counterSytle.module.css"
 import {ControlsDispatchProps} from "./ConnectedControls";
-
+// Nir: Pure components should not get the props type from the connected types
 export const Controls = (props: ControlsDispatchProps) => {
 
     return (

@@ -5,7 +5,7 @@ export const CounterAPI: SlotKey<CounterAPI> = {
     name: "Counter API",
     public: true
 }
-
+// Nir: unused interface
 export interface CounterContributedComponent {
     component: ReactComponentContributor;
 }
