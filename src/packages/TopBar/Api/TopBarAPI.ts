@@ -4,7 +4,7 @@ export const TopBarAPI: SlotKey<TopBarAPI> = {
     name: "Top Bar API",
     public: true
 }
-
+// Nir: Empty interface
 export interface TopBarComponentContribution {
 }
 
@@ -20,7 +20,7 @@ export interface TopBarAPI {
     contributeComponent: (fromShell: Shell, contribution: ContributedComponent) => void,
     getSlot: () => ExtensionSlot<TopBarComponentContribution>,
 }
-
+// Nir: AIP -> API
 export const createTopBarAIP = (shell: Shell): TopBarAPI => {
     const contributeSlot = shell.declareSlot(TopBarComponentContributionSlotKey)
 

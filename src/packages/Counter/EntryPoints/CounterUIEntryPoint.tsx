@@ -13,6 +13,6 @@ export const CounterUIEntryPoint: EntryPoint = {
     extend(shell: Shell) {
         const Counter = createConnectedCounter(shell)
         shell.getAPI(MainViewAPI).contributeComponent(shell, {component: () => <Counter/>})
-        // Nir: Here the controls should be contributed to the topBar
+        // Nir: Here you should contribute the controls to the topBar
     }
 }

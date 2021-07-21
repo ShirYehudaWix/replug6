@@ -10,7 +10,7 @@ import {ControlsAPI} from "../../Counter/APIs/controlsAPI";
 export const TopBarUIEntryPoint: EntryPoint = {
     name: "Top Bar",
     getDependencyAPIs(): SlotKey<any>[] {
-        return [MainViewAPI, ControlsAPI] // Nir: topBar should be dependent on Controls
+        return [MainViewAPI, ControlsAPI] // Nir: topBar should not be dependent on Controls
     },
 
     declareAPIs() {
